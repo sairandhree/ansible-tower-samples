@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+  - name: Collect facts
+    setup:
+      gather_subset:
+         - 'all'
+#        - '!all'
+#        - '!any'
+#        - facter
+  - debug: var=ansible_facts
